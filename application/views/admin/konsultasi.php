@@ -1,30 +1,39 @@
 <div class="card">
     <h5 class="card-header">Konsultasi Terbaru</h5>
     <div class="card-body">
-        <?php if ($konsultasi) : ?>
+        <table class="table mb-0">
+            <thead>
+                <tr>
+                    <th scope="col">ID Konsultasi</th>
+                    <th scope="col">Nama Lengkap</th>
+                    <th scope="col">Tanggal Konsultasi</th>
+                    <th class="text-center" scope="col">Tindakan</th>
+                </tr>
+            </thead>
 
-            <ul class="list-group list-group-flush">
-                <?php foreach ($konsultasi as $row) : ?>
-                    <?php if ($row['id_hama'] == '') : ?>
-                        <a href="<?= base_url('admin/detailkonsultasi/' . $row['id']); ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                            <?= $row['nama']; ?>
-                            <span class="badge badge-dark"><?= date('d F Y', $row['tanggal']); ?><i class="fas fa-fw fa-grip-lines-vertical"></i><?= date('H : i', $row['tanggal']); ?> WIB</span>
-                        </a>
-                    <?php else : ?>
-                        <li class="list-group-item">
-                            <div class="alert alert-info" role="alert">
-                                <i class="fas fa-fw fa-info-circle mr-1"></i>Data konsultasi terbaru tidak ada.
+            <tbody>
+                <?php if ($konsultasi_terbaru) : ?>
+                    <?php foreach ($konsultasi_terbaru as $row) : ?>
+                        <tr>
+                            <td class="align-middle"><?= $row['id']; ?></td>
+                            <td class="align-middle"><?= $row['nama']; ?></td>
+                            <td class="align-middle"><?= date('d / m / Y', $row['waktu']); ?></td>
+                            <td class="align-middle text-center">
+                                <a href="<?= base_url('admin/detailkonsultasi/' . $row['id']); ?>" class="btn btn-primary">Lihat Konsultasi<i class="fas fa-chevron-right ml-1"></i></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td class="align-middle" colspan="4">
+                            <div class="alert alert-info mb-0" role="alert">
+                                <i class="fas fa-info-circle mr-1"></i>Data konsultasi terbaru tidak ada.
                             </div>
-                        </li>
-                        <?php break; ?>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        <?php else : ?>
-            <div class="alert alert-info" role="alert">
-                <i class="fas fa-fw fa-info-circle mr-1"></i>Data konsultasi terbaru tidak ada.
-            </div>
-        <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -34,27 +43,43 @@
         <?php if ($this->session->flashdata('alert')) : ?>
             <?= $this->session->flashdata('alert'); ?>
         <?php endif; ?>
-        <?php if ($konsultasi) : ?>
-            <ul class="list-group list-group-flush">
-                <?php foreach ($konsultasi as $row) : ?>
-                    <?php if ($row['id_hama']) : ?>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <span class="badge badge-dark"><?= date('d F Y', $row['tanggal']); ?><i class="fas fa-fw fa-grip-lines-vertical"></i><?= date('H : i', $row['tanggal']); ?> WIB</span>
-                                <span class="font-weight-bolder ml-3"><?= $row['nama']; ?></span>
+        <table class="table mb-0">
+            <thead>
+                <tr>
+                    <th scope="col">ID Konsultasi</th>
+                    <th scope="col">Nama Lengkap</th>
+                    <th scope="col">Tanggal Konsultasi</th>
+                    <th scope="col">Hasil</th>
+                    <th class="text-center" scope="col">Tindakan</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php if ($konsultasi_histori) : ?>
+                    <?php foreach ($konsultasi_histori as $row) : ?>
+                        <?php if ($row['kode_hamapenyakit']) : ?>
+                            <tr>
+                                <td class="align-middle"><?= $row['id']; ?></td>
+                                <td class="align-middle"><?= $row['nama']; ?></td>
+                                <td class="align-middle"><?= date('d / m / Y', $row['waktu']); ?></td>
+                                <td class="align-middle"><?= $row['nama_hamapenyakit']; ?></td>
+                                <td class="align-middle text-center">
+                                    <a href="<?= base_url('admin/detailkonsultasi/' . $row['id']); ?>" class="btn btn-primary ">Detail</a>
+                                    <a href="<?= base_url('admin/hapuskonsultasi/' . $row['id']); ?>" class="btn btn-danger ">Hapus</a>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td class="align-middle" colspan="5">
+                            <div class="alert alert-info mb-0" role="alert">
+                                <i class="fas fa-info-circle mr-1"></i>Data histori konsultasi tidak ada.
                             </div>
-                            <div class="d-flex align-items-center">
-                                <a href="<?= base_url('admin/detailkonsultasi/' . $row['id']); ?>" class="btn btn-info">Lihat Selengkapnya</a>
-                                <a href="<?= base_url('admin/hapuskonsultasi/' . $row['id']); ?>" class="ml-3"><i class="fas fa-fw fa-times-circle text-danger fa-lg"></i></a>
-                            </div>
-                        </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        <?php else : ?>
-            <div class="alert alert-info" role="alert">
-                <i class="fas fa-fw fa-info-circle mr-1"></i>Data histori konsultasi tidak ada.
-            </div>
-        <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </div>
 </div>

@@ -29,10 +29,12 @@ class Konsultasi extends CI_Controller
 
                 if ($this->upload->do_upload('image')) {
                     $data = [
-                        'id' => base_convert(microtime(false), 10, 32),
+                        'id' => base_convert(hrtime(true), 10, 32),
                         'nama' => $this->input->post('nama', true),
                         'gambar' => $this->upload->data('file_name'),
-                        'tanggal' => time()
+                        'kode_hamapenyakit' => '',
+                        'status' => 0,
+                        'waktu' => time()
                     ];
 
                     $this->db->insert('konsultasi', $data);
@@ -48,7 +50,7 @@ class Konsultasi extends CI_Controller
                         'alert',
                         '<div class="alert alert-success alert-dismissible fade show" role="alert">
                             <i class="fas fa-fw fa-check-circle"></i>
-                            Berkas gambar tanaman Berhasil dikirim. Silahkan tunggu beberapa menit kemudian muat ulang kembali halaman.
+                            Berkas gambar tanaman Berhasil dikirim. Silahkan tunggu beberapa menit halaman akan dimuat ulang otomatis.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -80,12 +82,10 @@ class Konsultasi extends CI_Controller
         }
 
         $data['judul'] = 'Halaman Hasil Konsultasi';
-
         $this->db->select('*');
-        $this->db->from('konsultasi');
-        $this->db->join('hama', 'hama.id = konsultasi.id_hama');
-        $this->db->where('konsultasi.id', $this->session->userdata('id'));
-        $data['konsultasi'] = $this->db->get()->row_array();
+        $this->db->join('hama_penyakit', 'hama_penyakit.kode = konsultasi.kode_hamapenyakit');
+        $this->db->join('kategori', 'kategori.kode = hama_penyakit.kode_kategori');
+        $data['konsultasi'] = $this->db->get_where('konsultasi', ['id' => $this->session->userdata('id')])->row_array();
 
         $this->load->view('template/header', $data);
         $this->load->view('konsultasi/hasil', $data);

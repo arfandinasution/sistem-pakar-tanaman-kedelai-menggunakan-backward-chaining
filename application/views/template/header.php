@@ -12,6 +12,9 @@
     <!-- Fontawesome -->
     <link rel=" stylesheet" href="<?= base_url('vendors/fontawesome/css/all.css'); ?>">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>">
+
     <title><?= $judul; ?></title>
 </head>
 

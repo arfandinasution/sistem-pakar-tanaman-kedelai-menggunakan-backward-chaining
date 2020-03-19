@@ -10,18 +10,45 @@
                 <div class="card">
                     <img src="<?= base_url('assets/img/konsultasi/' . $konsultasi['gambar']); ?>" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">Nama Hama</h5>
-                        <p class="card-text"><?= $konsultasi['nama']; ?></p>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="mb-0">Nama Hama</h5>
+                            </div>
+                            <div class="col-6">
+                                <?= $konsultasi['nama_hamapenyakit']; ?>
+                            </div>
+                        </div>
                         <hr>
-                        <h5 class="card-title">Pengendalian</h5>
-                        <p class="card-text"><?= $konsultasi['pengendalian']; ?></p>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="mb-0">Kategori</h5>
+                            </div>
+                            <div class="col-6">
+                                <?= $konsultasi['nama_kategori']; ?>
+                            </div>
+                        </div>
                         <hr>
-                        <h5 class="card-title">Penanggulan</h5>
-                        <?php if ($konsultasi['penanggulangan']) : ?>
-                            <p class="card-text"><?= $konsultasi['penanggulangan']; ?></p>
-                        <?php else : ?>
-                            <p class="card-text">-</p>
-                        <?php endif; ?>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="mb-0">Pengendalian Hama</h5>
+                            </div>
+                            <div class="col-6">
+                                <?= $konsultasi['pengendalian']; ?>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="mb-0">Penanggulan Hama</h5>
+                            </div>
+                            <div class="col-6">
+                                <?php if ($konsultasi['penanggulangan']) : ?>
+                                    <?= $konsultasi['penanggulangan']; ?>
+                                <?php else : ?>
+                                    Tidak ada
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,9 +59,14 @@
         <?php else : ?>
             <div class="card-body">
                 <div class="alert alert-success mb-0" role="alert">
-                    <h4 class="alert-heading">Data Kamu telah dikirim.</h4>
+                    <h4 class="alert-heading"><i class="fas fa-check-circle mr-1"></i>Data konsultasimu telah dikirim.</h4>
                     <hr>
-                    <p>Mohon tunggu beberapa menit untuk hasil konsultasi tanaman kedelai mu. kamu bisa mencoba memuat halaman kembali untuk mendapatkan hasil konsultasimu</p>
+                    <p><strong>Jangan menutup halaman ini!</strong></p>
+                    <p>
+                        Mohon tunggu beberapa menit untuk hasil konsultasi tanaman kedelai yang kamu kirim.
+                        <br>
+                        Halaman akan dimuat secara otomatis.
+                    </p>
                 </div>
             </div>
         <?php endif; ?>

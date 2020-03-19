@@ -3,4 +3,7 @@ $('.custom-file-input').on('change', function () {
     $(this).next('.custom-file-label').addClass("selected").html(fileName);
 });
 
-$('.gambar-tanaman')
+$('.buttonEdit').on('click', function () {
+    $('.kode').val($(this).data('id'));
+    $('.gejala').val($(this).data('gejala'));
+});
