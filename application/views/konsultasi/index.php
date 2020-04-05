@@ -23,7 +23,6 @@
                             <input type="file" class="custom-file-input" id="image" name="image" value="<?= set_value('image'); ?>">
                             <label class="custom-file-label" for="image">Pilih Berkas Gambar</label>
                             <small class="text-form text-muted">Ukuran maksimal berkas: 5MB</small>
-                            <small class="text-form text-danger"><?= form_error('image'); ?></small>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success"><i class="fas fa-fw fa-upload mr-1"></i>Kirim Gambar</button>

@@ -54,8 +54,9 @@ class Gejala extends CI_Controller
                 'gejala' => strip_tags($this->input->post('gejala', true)),
                 'kode_hamapenyakit' => $this->input->post('kode_hamapenyakit', true)
             ];
-
+            
             $this->db->insert('gejala', $data);
+
             $this->session->set_flashdata(
                 'alert',
                 '<div class="alert alert-success alert-dismissible fade show" role="alert">

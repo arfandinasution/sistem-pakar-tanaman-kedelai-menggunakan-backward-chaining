@@ -34,7 +34,7 @@ class Diagnosis extends CI_Controller
                 $this->db->select('*');
                 $this->db->join('kategori', 'kategori.kode = hama_penyakit.kode_kategori');
                 $data['hasil'] = $this->db->get_where('hama_penyakit', ['hama_penyakit.kode' => 'h01'])->row_array();
-            } elseif ($data['gejala'][0] == 'GD004' && $data['gejala'][1] == 'GD005') {
+            } elseif ($data['gejala'][0] == 'GD005' && $data['gejala'][1] == 'GD006') {
                 $this->db->select('*');
                 $this->db->join('kategori', 'kategori.kode = hama_penyakit.kode_kategori');
                 $data['hasil'] = $this->db->get_where('hama_penyakit', ['hama_penyakit.kode' => 'h02'])->row_array();

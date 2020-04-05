@@ -11,6 +11,7 @@ class Konsultasi extends CI_Controller
     public function index()
     {
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Halaman Konsultasi';
 
@@ -58,6 +59,7 @@ class Konsultasi extends CI_Controller
                     );
                     redirect('konsultasi/hasil');
                 } else {
+                    $error = array('error' => $this->upload->display_errors());
                     $this->session->set_flashdata(
                         'alert',
                         '<div class="alert alert-danger alert-dismissible fade show" role="alert">

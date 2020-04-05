@@ -1,4 +1,4 @@
-<?php if (!$konsultasi) : ?>
+<?php if ($konsultasi == null) : ?>
     <meta http-equiv="refresh" content="3" />
 <?php endif; ?>
 <div class="container py-5">

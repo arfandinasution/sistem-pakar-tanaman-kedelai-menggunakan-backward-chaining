@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Mar 2020 pada 20.27
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.3
+-- Generation Time: Apr 05, 2020 at 02:45 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,7 +35,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gejala`
+-- Table structure for table `gejala`
 --
 
 CREATE TABLE `gejala` (
@@ -54,7 +54,7 @@ CREATE TABLE `gejala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `gejala`
+-- Dumping data for table `gejala`
 --
 
 INSERT INTO `gejala` (`kode`, `gejala`, `kode_hamapenyakit`) VALUES
@@ -76,31 +76,39 @@ INSERT INTO `gejala` (`kode`, `gejala`, `kode_hamapenyakit`) VALUES
 ('GD016', 'Batang tanaman kedelai yang digerak menjadi rusak hingga tinggal lapisan kulitnya', 'H07'),
 ('GD017', 'Serangan lebih lanjut mengakibatkan pucuk-pucuk tanaman menjadi layu dan mengering', 'H07'),
 ('GD018', 'Serangan hama ini biasa terjadi pada waktu tanaman kedelai berumur 4-6 minggu setelah tanam', 'H07'),
-('GD025', 'Infeksi awal dimulai dari daun-daun pada batang sebelah bawah dan terus menjalar kedaun-daun sebelah atas', 'H12'),
-('GD026', 'Gejala pada daun yang terserang adalah terjadi perubahan warna dari hijau menjadi coklat, kemudain mengering dan akhirnya rontok', 'H12'),
-('GD027', 'Ciri khas serangan penyakit karat adalah adanya bercak-bercak coklat pada pemukaan daun sebelah bawah', 'H12'),
-('GD028', 'Akibat serangan penyakit ini menyebabkan biji-biji kedelai tidak berisi dan bahkan hampa', 'H12'),
-('GD029', 'Tanaman kedelai yang terserang daun-daunnya mengecil', 'H13'),
-('GD030', 'Ruas-ruasnya memendek', 'H13'),
-('GD031', 'Tunas pada ketiak berkembang sehingga seperti sapu', 'H13'),
-('GD032', 'Gejala serangannya adalah tanaman kerdil', 'H14'),
-('GD033', 'Warna daun lebih hijau dibandingkan dengan daun yang normal', 'H14'),
-('GD034', 'Pada daun-daun yang muda menampakkan lekuk (keriting) dan kasar dan berkeriput', 'H14'),
-('GD035', 'Menunjukan perubahan warna daun dari hijau menjadi kuning-belang, terutama pada pucuk-pucuknya', 'H14'),
-('GD036', 'Daun-daun menjadi belang-belang kuning, hijau muda atau hijau tidak merata', 'H14'),
-('GD037', 'Gejala serangan yang khas adalah pada lapisan akar utama dan pangkal batang bewarna kecoklat-coklatan', 'H15'),
-('GD038', 'Membentuk semacam kanker cekung bewarna coklat kemerah-merahan', 'H15'),
-('GD039', 'Akibat membusuknya perakaran dan pangkal batang, maka tanaman menjadi layu dan akan mati', 'H15'),
-('GD040', 'Terdapat bercak-bercak berwarna gelap kebasah-basahan dan tampak kempis', 'H15'),
-('GD041', 'Gejala pada daun yang terserang adalah seperti tampak tersiram air panas', 'H15'),
-('GD042', 'Perkecambahan biji terganggu', 'H16'),
-('GD043', 'Tulang daun pada permukaan bawah pada tanaman yang terserang biasanya menebal dengan warna kecoklatan', 'H16'),
-('GD044', 'Pada batang akan timbul bintik-bintik hitam  berupa duri-duri jamur', 'H16');
+('GD019', 'Terdapat lubang pada polong kedelai sehingga rusak', 'H08'),
+('GD020', 'Kadang-kadang membusuk', 'H08'),
+('GD021', 'Akibat serangan penggerek polong menyebabkan kerusakan pada polong muda maupun polong tua', 'H09'),
+('GD022', 'Terjadi kerusakan pada bunga dan menyebabkan kegagalan pembentukan buah (polong)', 'H09'),
+('GD023', 'Akibat dari serangan kepik hijau menyebabkan polong ataupun biji keriput', 'H10'),
+('GD024', 'Terdapat bintik-bintik pada kacang', 'H10'),
+('GD025', 'Polong gugur atau hampa, dan mengering', 'H11'),
+('GD026', 'Biji berbintik-bintik dan akibatnya menadi busuk berwarna hitam', 'H11'),
+('GD027', 'Infeksi awal dimulia dari daun-daun pada batang sebelah bawah dan terus menjalar kedaun-daun sebelah atas', 'H12'),
+('GD028', 'Gejala pada daun yang terserang adalah terjadi perubahan warna dari hijau menjadi coklat, kemudain mengering dan akhirnya rotok', 'H12'),
+('GD029', 'Ciri khas serangan penyakit karat adalah adanya bercak-bercak coklat pada pemukaan daun sebelah bawah', 'H12'),
+('GD030', 'Akibat serangan penyakit ini menyebabkan biji-biji kedelai tidak berisi dan bahkan hampa', 'H12'),
+('GD031', 'Tanaman kedelai yang terserang daun-daunnya mengecil', 'H13'),
+('GD032', 'Ruas-ruasnya memendek', 'H13'),
+('GD033', 'Tunas pada ketiak berkembang sehingga seperti sapu', 'H13'),
+('GD034', 'Gejala serangannya adalah tanaman kerdil', 'H14'),
+('GD035', 'Warna daun lebih hijau dibandingkan dengan daun yang normal', 'H14'),
+('GD036', 'Pada daun-daun yang muda menampakkan lekuk (keriting) dan kasar dan berkeriput', 'H14'),
+('GD037', 'Menunjukan perubahan warna daun dari hijau menjadi kuning-belang, terutama pada pucuk-pucuknya', 'H14'),
+('GD038', 'Daun-daun menjadi belang-belang kuning, hijau muda atau hijau tidak merata', 'H14'),
+('GD039', 'Gejala serangan yang khas adalah pada lapisan akar utama dan pangkal batang bewarna kecoklat-coklatan', 'H15'),
+('GD040', 'Membentuk semacam kanker cekung bewarna coklat kemerah-merahan', 'H15'),
+('GD041', 'Akibat membusuknya perakaran dan pangkal batang, maka tanaman menjadi layu dan akan mati', 'H15'),
+('GD042', 'Gejala pada polong adalah terdapat bercak-bercak berwarna gelap kebasah-basahan dan tampak kempis', 'H15'),
+('GD043', 'Gejala pada daun yang terserang adalah seperti tampak tersiram air panas', 'H15'),
+('GD044', 'Perkecambaan biji terganggu', 'H16'),
+('GD045', 'Tulang daun pada permukaan bawah pada tanaman yang terserang biasa menebal dengan warna kecoklatan', 'H16'),
+('GD046', 'Pada batang akan timbul bintik-bintik hitam berupa duri-duri jamur', 'H16');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hama_penyakit`
+-- Table structure for table `hama_penyakit`
 --
 
 CREATE TABLE `hama_penyakit` (
@@ -113,7 +121,7 @@ CREATE TABLE `hama_penyakit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `hama_penyakit`
+-- Dumping data for table `hama_penyakit`
 --
 
 INSERT INTO `hama_penyakit` (`kode`, `nama_hamapenyakit`, `pengendalian`, `penanggulangan`, `waktu`, `kode_kategori`) VALUES
@@ -137,7 +145,7 @@ INSERT INTO `hama_penyakit` (`kode`, `nama_hamapenyakit`, `pengendalian`, `penan
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -147,7 +155,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`kode`, `nama_kategori`, `waktu`) VALUES
@@ -160,11 +168,11 @@ INSERT INTO `kategori` (`kode`, `nama_kategori`, `waktu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konsultasi`
+-- Table structure for table `konsultasi`
 --
 
 CREATE TABLE `konsultasi` (
-  `id` varchar(10) NOT NULL,
+  `id` varchar(16) NOT NULL,
   `nama` varchar(64) NOT NULL,
   `gambar` varchar(128) NOT NULL,
   `kode_hamapenyakit` varchar(4) DEFAULT NULL,
@@ -177,41 +185,41 @@ CREATE TABLE `konsultasi` (
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `gejala`
+-- Indexes for table `gejala`
 --
 ALTER TABLE `gejala`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `hama_penyakit`
+-- Indexes for table `hama_penyakit`
 --
 ALTER TABLE `hama_penyakit`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `konsultasi`
+-- Indexes for table `konsultasi`
 --
 ALTER TABLE `konsultasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
